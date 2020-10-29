@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 
 # Declare member variables here. Examples:
@@ -6,6 +6,7 @@ extends Area2D
 # var b = "text"
 
 var holding = false
+var held = false
 var mousePos = Vector2()
 var offset = Vector2()
 
@@ -27,14 +28,28 @@ func _input(event):
 		if(holding):
 			mousePos = event.position + offset
 
+
+func _integrate_forces(state):
+	var deltaMove = (position - mousePos) * 10
+	if(holding):
+		print("drag")
+		state.transform = Transform2D(0, mousePos)
+		state.linear_velocity = Vector2()
+		
+		held = true
+	elif(held && !holding):
+		held = false
+		state.linear_velocity = deltaMove
+		
+		
+	
+#	var spriteSize = $Sprite.texture.get_size()/2
+#	position.x = clamp(position.x, spriteSize.x, get_viewport_rect().size.x - spriteSize.x)
+#	position.y = clamp(position.y, spriteSize.y, get_viewport_rect().size.y - spriteSize.y)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(holding):
-		position = mousePos
-	
-	var spriteSize = $Sprite.texture.get_size()/2
-	position.x = clamp(position.x, spriteSize.x, get_viewport_rect().size.x - spriteSize.x)
-	position.y = clamp(position.y, spriteSize.y, get_viewport_rect().size.y - spriteSize.y)
+	pass
 
 var hovering = false
 func _on_Player_mouse_entered():
