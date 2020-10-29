@@ -9,30 +9,62 @@ extents = Vector2( 600, 10 )
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 392.438, 158.165 )
+position = Vector2( 795.483, 150.673 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 734.052, 303.5 )
+
+[node name="Player3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 459.862, 233.08 )
+
+[node name="Player4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 668.127, 98.2322 )
+
+[node name="Player5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 864.405, 384.409 )
+
+[node name="Player6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 366.967, 330.47 )
+
+[node name="Player7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 178.18, 123.703 )
+
+[node name="Player8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 500.316, 324.477 )
+
+[node name="Player9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 214.14, 309.494 )
+
+[node name="Player10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512.303, 81.7508 )
+
+[node name="Player11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 645.652, 203.114 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
 position = Vector2( 500, 0 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
 position = Vector2( 0, 600 )
 physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
 position = Vector2( 500, 0 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
 position = Vector2( 0, 600 )
 rotation = -1.57079
 physics_material_override = ExtResource( 2 )
@@ -40,11 +72,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 position = Vector2( 500, 0 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
 position = Vector2( 1020, 600 )
 rotation = -1.57079
 physics_material_override = ExtResource( 2 )
@@ -52,6 +84,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 position = Vector2( 500, 0 )
 shape = SubResource( 1 )

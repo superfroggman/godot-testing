@@ -30,7 +30,7 @@ func _input(event):
 
 
 func _integrate_forces(state):
-	var deltaMove = (position - mousePos) * 10
+	var deltaMove = (position - mousePos) * 20
 	if(holding):
 		print("drag")
 		state.transform = Transform2D(0, mousePos)
